@@ -5,10 +5,15 @@
  */
 package poo2;
 
+import java.util.Scanner;
 import poo2.objetos.CuentaBancaria;
+import poo2.objetos.NIF;
 import poo2.objetos.Persona;
+import poo2.objetos.Raices;
 import poo2.servicios.CuentaBancariaServicio;
+import poo2.servicios.NIFServicio;
 import poo2.servicios.PersonaServicio;
+import poo2.servicios.RaicesServicio;
 
 /**
  *
@@ -41,7 +46,7 @@ public class POO2 {
         * un porcentaje de cuantos son mayores de edad y cuantos menores. 
         * Para esto, podemos crear unos métodos adicionales.*/
         
-        PersonaServicio servicio = new PersonaServicio ();
+        /*PersonaServicio servicio = new PersonaServicio ();
         Persona p1 = servicio.crearPersona();
         Persona p2 = servicio.crearPersona();
         Persona p3 = servicio.crearPersona();
@@ -59,7 +64,17 @@ public class POO2 {
         IMC [3]= servicio.calcularIMC(p4.getPeso(), p4.getAltura());
         
         servicio.porcenEdad(edades);
-        servicio.porcenIMC(IMC);
+        servicio.porcenIMC(IMC);*/
+        
+        /*RaicesServicio servicio= new RaicesServicio();
+        Raices nueva=servicio.crearRaiz();
+        servicio.getDiscriminante(nueva.getA(),nueva.getB(),nueva.getC());
+        servicio.calcular(nueva.getA(), nueva.getB(), nueva.getC());*/
+        
+        NIFServicio servicio = new NIFServicio ();
+        NIF nuevo = servicio.crearNIF();
+        servicio.mostrar();
+       
         
         
     }
