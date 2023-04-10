@@ -69,10 +69,13 @@ public class NIFServicio {
     }
 
     public void setDNI(long DNI) {
+       this.nuevo=new NIF(DNI, letra);
        this.DNI=DNI;
+       
     }
 
     public void setletra (String letra) {
+       this.nuevo=new NIF(DNI, letra);
        this.letra=letra;
     }
 }
