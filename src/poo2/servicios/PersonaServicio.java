@@ -50,6 +50,7 @@ public class PersonaServicio {
         double altura = leer.nextDouble();
         return new Persona(nombre, edad, sexo, peso, altura);
     }
+        
     public boolean esMayorDeEdad (int edad){
         boolean mayor = true;
         if (edad<18){

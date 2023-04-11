@@ -6,11 +6,18 @@
 package poo2;
 
 import java.util.Scanner;
+import poo2.objetos.Ascensor;
+import poo2.objetos.Coche;
 import poo2.objetos.CuentaBancaria;
+import poo2.objetos.Estudiante;
+import poo2.objetos.Mascota;
 import poo2.objetos.NIF;
 import poo2.objetos.Persona;
 import poo2.objetos.Raices;
+import poo2.servicios.AscensorServicio;
+import poo2.servicios.CocheServicio;
 import poo2.servicios.CuentaBancariaServicio;
+import poo2.servicios.EstudianteServicio;
 import poo2.servicios.NIFServicio;
 import poo2.servicios.PersonaServicio;
 import poo2.servicios.RaicesServicio;
@@ -71,12 +78,57 @@ public class POO2 {
         servicio.getDiscriminante(nueva.getA(),nueva.getB(),nueva.getC());
         servicio.calcular(nueva.getA(), nueva.getB(), nueva.getC());*/
         
-        NIFServicio servicio = new NIFServicio ();
+        /*NIFServicio servicio = new NIFServicio ();
         NIF nuevo = servicio.crearNIF();
-        servicio.mostrar();
+        servicio.mostrar();*/
        
+        /*CocheServicio servicio = new CocheServicio();
+        Coche [] autos = new Coche [3];
+        for (int i = 0; i < 3; i++) {
+            autos [i] = servicio.crearCoche();
+        }
+        for (int i = 0; i < 3; i++) {
+            servicio.mostrarCoche(autos[i].getMarca(), autos[i].getModelo(), autos [i].getPrecio());
+        }*/
         
+        /*EstudianteServicio service = new EstudianteServicio ();
+        Estudiante [] misestudiantes = service.ingreso();
+        double media = service.NotaMedia();
+        System.out.println("La nota media grupal de los alumnos es: " + media);
+        service.MostrarAltos(media);*/
         
+        /*Mascota nueva = new Mascota ();
+        nueva.crearMascota();
+        nueva.cumplirAnios();
+        nueva.MostrarDatos();*/
+        
+        //Crea un programa que cree un objeto "Ascensor" con un "maximoPisos" de 10. 
+        //Simula el comportamiento del ascensor moviéndolo hacia arriba y hacia abajo, 
+        //yendo a un piso específico, y mostrando en pantalla el piso actual después de cada movimiento.
+        Scanner leer = new Scanner(System.in);
+        AscensorServicio movimiento = new AscensorServicio();
+        Ascensor nuevo = movimiento.CrearAscensor();
+        int opcion;
+        do {
+            System.out.println("Indique el movimiento que desea realizar");
+            System.out.println("1. subir un piso");
+            System.out.println("2. bajar un piso");
+            System.out.println("3. ir a un piso determinado");
+            System.out.println("4. mostrar piso actual");
+            System.out.println("5. salir");
+            opcion = leer.nextInt();
+            switch (opcion){
+            case 1: movimiento.subir(nuevo.getPisoActual(), nuevo);
+            break;
+            case 2: movimiento.bajar(nuevo.getPisoActual(), nuevo);
+            break;
+            case 3: System.out.println("Indique a que piso desea ir");
+            int piso = leer.nextInt();
+            movimiento.IrA(piso, nuevo);
+            break;
+            case 4: System.out.println("Su piso actual es: " +nuevo.getPisoActual());
+        }
+        }while (opcion!=5);
     }
     
 }
