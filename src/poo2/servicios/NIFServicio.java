@@ -15,16 +15,14 @@ import poo2.objetos.NIF;
 public class NIFServicio {
     private Scanner leer = new Scanner(System.in);
     private NIF nuevo;
-    private long DNI;
-    private String letra;
     
     public NIF crearNIF (){
       System.out.println("Ingrese su numero de DNI");
-      DNI= leer.nextLong();
-      letra= calcularletra();
+      long DNI= leer.nextLong();
+      String letra= calcularletra(DNI);
     return new NIF (DNI, letra);
     }
-    public String calcularletra (){
+    public String calcularletra (long DNI){
         while (DNI>=23){
             DNI-=23;
         }
@@ -53,29 +51,12 @@ public class NIFServicio {
         digitos[20]="C";
         digitos[21]="K";
         digitos[22]="E";
-        letra=digitos[num];
+        String letra=digitos[num];
         return letra;
     }
-    public void mostrar(){
+    public void mostrar(long DNI, String letra){
         System.out.println("Su NIF es");
         System.out.println(DNI + "-" + letra);
     }
-    public long getDNI() {
-        return DNI;
-    }
 
-    public String getLetra() {
-        return letra;
-    }
-
-    public void setDNI(long DNI) {
-       this.nuevo=new NIF(DNI, letra);
-       this.DNI=DNI;
-       
-    }
-
-    public void setletra (String letra) {
-       this.nuevo=new NIF(DNI, letra);
-       this.letra=letra;
-    }
 }
